@@ -1,9 +1,10 @@
-# Machine-Learning
-Implementing classic machine learning algorithms using numpy(without use of sklearn). The code are adjusted from the assignments of machine learning courses in UBC. It's a good place to start with if you want to understand how they work. The dict of the files and the modulars/functions that contained in each file are as follows.
+# Machine Learning with numpy
+Implement classic machine learning algorithms using numpy(without use of sklearn). It will be a good place to start with if you want to understand how they work. The code are adjusted from the assignments of machine learning courses in UBC. The dict of the files and the modulars/functions that contained in each file are as follows.
 
 
     └─code
         ├─findMin.py
+        │  ├─findMinL1
         │  └─findMin
         ├─kmeans.py
         │  └─Kmeans
