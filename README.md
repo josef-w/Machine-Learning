@@ -51,4 +51,4 @@ Implement classic machine learning algorithms using numpy(without use of sklearn
         ├─neural_net.py
         │  ├─NeuralNet
         
-aaaa   
+![image](https://github.com/josef-w/Machine-Learning/blob/main/figs/decisionBoundary.png)
