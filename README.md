@@ -52,3 +52,7 @@ Implement classic machine learning algorithms using numpy(without use of sklearn
         │  ├─NeuralNet
         
 ![image](https://github.com/josef-w/Machine-Learning/blob/main/figs/decisionBoundary.png)
+![image](https://github.com/josef-w/Machine-Learning/blob/main/figs/knn.png)
+![image](https://github.com/josef-w/Machine-Learning/blob/main/figs/kmeans_basic.png)
+![image](https://github.com/josef-w/Machine-Learning/blob/main/figs/least_squares_robust.png)
+![image](https://github.com/josef-w/Machine-Learning/blob/main/figs/pca_highway.png)
