@@ -243,7 +243,7 @@ def Gini_impurity(p):
     
     gini = 0*p # initialize full of zeros
     gini[p>0] = p[p>0]*(1-p[p>0]) # only do the computation when p>0
-    return -np.sum(gini)
+    return np.sum(gini)
 
 
 
@@ -284,7 +284,7 @@ class DecisionStumpGiniIndex(DecisionStumpErrorRate):
             # threshold=np.zeros(np.shape(thresholds[d])[0])
             # for i in range(np.shape(thresholds[d])[0]):
             #     threshold[i]=thresholds[d][i][0]
-            threshold=thresholds[d]
+            #threshold=thresholds[d]
             for value in threshold[:-1]:
                 # Count number of class labels where the feature is greater than threshold
                 y_vals = y[X[:,d] > value]

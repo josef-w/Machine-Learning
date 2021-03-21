@@ -19,7 +19,6 @@ class RandomForest:
 
     def fit(self, X, y):
         self.trees = []
-        self.create_splits(X)
         for m in range(self.num_trees):
             tree = RandomTree(max_depth=self.max_depth)
             tree.fit(X, y, thresholds=self.thresholds)

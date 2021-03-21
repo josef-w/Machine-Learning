@@ -30,7 +30,7 @@ class KNN:
         k = min(self.k, n)
 
         # Compute cosine_distance distances between X and Xtest
-        dist2 = self.cosine_distance(X, Xtest)
+        dist2 = self.euclidean_dist_squared(X, Xtest)
 
         # yhat is a vector of size t with integer elements
         yhat = np.ones(t, dtype=np.uint8)
@@ -43,7 +43,7 @@ class KNN:
 
         return yhat
 
-    def euclidean_dist_squared(X1, X2):
+    def euclidean_dist_squared(self,X1, X2):
         """Computes the Euclidean distance between rows of 'X1' and rows of 'X2'
     
         Parameters
@@ -56,7 +56,7 @@ class KNN:
         The right-hand-side of the above is more amenable to vector/matrix operations.
         """
         return np.sum(X1**2, axis=1)[:,None] + np.sum(X2**2, axis=1)[None] - 2 * np.dot(X1,X2.T)
-    def cosine_distance(X1,X2):
+    def cosine_distance(self,X1,X2):
         """
         Computes the cosine distance between rows of 'X1' and rows of 'X2'
     

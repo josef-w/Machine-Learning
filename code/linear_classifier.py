@@ -12,6 +12,7 @@ from scipy.optimize import approx_fprime
 import utils
 
 class leastSquaresClassifier:
+    #one-vs-all classifier using least squared loss function
     def fit(self, X, y):
         n, d = X.shape
         self.n_classes = np.unique(y).size
@@ -32,7 +33,7 @@ class leastSquaresClassifier:
         return np.argmax(X@self.W.T, axis=1)
     
 class logLinearClassifier:
-    
+    #one-vs-all classifier using logistic loss function
     def __init__(self, verbose=0, maxEvals=100):
         self.verbose = verbose
         self.maxEvals = maxEvals
@@ -71,7 +72,7 @@ class logLinearClassifier:
         return np.argmax(X@self.W.T, axis=1)
     
 class softmaxClassifier:
-    
+    #Using softmax function, single classifier could output multi class result
     def __init__(self, verbose=0, maxEvals=100):
         self.verbose = verbose
         self.maxEvals = maxEvals

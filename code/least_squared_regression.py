@@ -33,10 +33,10 @@ class LinearModelGradient(LeastSquares):
         n, d = X.shape
 
         # Initial guess
-        self.w = np.zeros((d, 1))
+        self.w = np.zeros((d,1))
 
         # check the gradient
-        estimated_gradient = approx_fprime(self.w, lambda w: self.funObj(w,X,y)[0], epsilon=1e-6)
+        estimated_gradient = approx_fprime(self.w.reshape(d,), lambda w: self.funObj(w,X,y)[0], epsilon=1e-6)
         implemented_gradient = self.funObj(self.w,X,y)[1]
         if np.max(np.abs(estimated_gradient - implemented_gradient) > 1e-4):
             print('User and numerical derivatives differ: %s vs. %s' % (estimated_gradient, implemented_gradient));
@@ -47,7 +47,6 @@ class LinearModelGradient(LeastSquares):
 
     def funObj(self,w,X,y):
 
-        ''' MODIFY THIS CODE '''
         # Calculate the function value
         #f = 0.5*np.sum((X@w - y)**2)
         f=np.sum(np.log(np.exp(X@w - y)+np.exp(y-X@w)))
@@ -56,7 +55,7 @@ class LinearModelGradient(LeastSquares):
         g = np.zeros((1,1))
         for i in range(0,500):
             g+=(X[i]@(w.T@X[i]-y[i])-X[i]@(y[i]-w.T@X[i]))/(np.exp(w.T@X[i]-y[i])+np.exp(y[i]-w.T@X[i]))
-        return (f,g)
+        return f,g
 
 
 # Least Squares with a bias added
